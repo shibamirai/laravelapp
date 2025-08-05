@@ -8,9 +8,15 @@
   </head>
   <body>
     <h1>Blade/Index</h1>
-    <p>{{ $msg }}</p>
-    <p>{{ 12300*1.08 }}</p>
-    <p>{{ date('Y-m-d H:i:s') }}</p>
-    <p>{!! "This is <b>sample</b> <i>message.</i>" !!}</p>
+    @if ($msg != '')
+      <p>こんにちは、{{ $msg }}さん。</p>
+    @else
+      <p>何か書いてください。</p>
+    @endif
+    <form action="/hello" method="post">
+      @csrf
+      <input type="text" name="msg">
+      <input type="submit">
+    </form>
   </body>
 </html>
