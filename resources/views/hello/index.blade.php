@@ -8,11 +8,11 @@
   </head>
   <body>
     <h1>Blade/Index</h1>
-    @if ($msg != '')
-      <p>こんにちは、{{ $msg }}さん。</p>
+    @isset ($msg)
+      <p>「{{ $msg }}」と送信されました。</p>
     @else
       <p>何か書いてください。</p>
-    @endif
+    @endisset
     <form action="/hello" method="post">
       @csrf
       <input type="text" name="msg">
