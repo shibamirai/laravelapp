@@ -8,15 +8,10 @@
   </head>
   <body>
     <h1>Blade/Index</h1>
-    @isset ($msg)
-      <p>「{{ $msg }}」と送信されました。</p>
-    @else
-      <p>何か書いてください。</p>
-    @endisset
-    <form action="/hello" method="post">
-      @csrf
-      <input type="text" name="msg">
-      <input type="submit">
-    </form>
-  </body>
+    <p>&#064;foreachディレクティブの例</p>
+    <ol>
+      @foreach ($data as $item)
+        <li>{{ $item }}</li>
+      @endforeach
+    </ol>
 </html>
