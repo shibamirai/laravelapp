@@ -9,10 +9,8 @@
   <body>
     <h1>Blade/Index</h1>
     <p>{{ $msg }}</p>
-    <form action="/hello" method="post">
-      @csrf
-      <input type="text" name="msg">
-      <input type="submit">
-    </form>
+    <p>{{ 12300*1.08 }}</p>
+    <p>{{ date('Y-m-d H:i:s') }}</p>
+    <p>{!! "This is <b>sample</b> <i>message.</i>" !!}</p>
   </body>
 </html>
