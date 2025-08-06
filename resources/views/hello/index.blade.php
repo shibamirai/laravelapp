@@ -9,11 +9,9 @@
 
 @section('content')
   <p>ここが本文のコンテンツです。</p>
-  <p>必要なだけ記述できます。</p>
-  @include('hello.message', [
-    'msg_title' => 'OK',
-    'msg_content' => 'サブビューです。'
-  ])
+
+  @each('hello.item', $data, 'item')
+
 @endsection
 
 @section('footer')
