@@ -1,9 +1,18 @@
 <div>
     This is Livewire component!!
     <ul>
-        <li>{{ $message }}</li>
-        <li>(count: {{ $count }})</li>
+        <li>name:"{{ $name }}", pass:"{{ $pass }}"</li>
+        <li>[update: {{ $check }}]</li>
     </ul>
-    <input type="text" wire:model="message">
-    <button wire:click="updateMessage">Click</button>
+    <form wire:submit="updateMessage">
+        <div>
+            <input type="text" wire:model="name">
+        </div>
+        <div>
+            <input type="password" wire:model="pass">
+        </div>
+        <div>
+            <button type="submit">Click</button>
+        </div>
+    </form>
 </div>

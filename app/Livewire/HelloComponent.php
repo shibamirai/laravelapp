@@ -6,12 +6,24 @@ use Livewire\Component;
 
 class HelloComponent extends Component
 {
-    public $message = 'Hello, Livewire!';
-    public $count = 0;
+    public $name = '';
+    public $pass = '';
+    public $check = '';
+
+    public function mount()
+    {
+        $this->name = 'no name';
+        $this->check = 'no check.';
+    }
+    
+    public function updating($propertyName)
+    {
+        $this->check = $propertyName;
+    }
 
     public function updateMessage()
     {
-        $this->count++;
+        // not used.
     }
 
     public function render()
