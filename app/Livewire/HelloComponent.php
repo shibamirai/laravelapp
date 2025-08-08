@@ -7,15 +7,15 @@ use Livewire\Component;
 class HelloComponent extends Component
 {
     public $message = 'Hello, Livewire!';
+    public $count = 0;
 
     public function updateMessage()
     {
-        $this->message = 'こんにちは、Livewire!';
+        $this->count++;
     }
 
     public function render()
     {
-        $ob = ['msg' => 'レンダリングで値を渡します。'];
-        return view('livewire.hello-component', $ob);
+        return view('livewire.hello-component');
     }
 }

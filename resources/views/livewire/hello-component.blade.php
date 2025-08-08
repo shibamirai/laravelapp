@@ -2,6 +2,10 @@
     This is Livewire component!!
     <ul>
         <li>{{ $message }}</li>
+        <li>(count: {{ $count }})</li>
     </ul>
-    <button wire:click="updateMessage">Click</button>
+    <form wire:submit="updateMessage">
+        <input type="text" wire:model="message">
+        <button type="submit">Click</button>
+    </form>
 </div>
