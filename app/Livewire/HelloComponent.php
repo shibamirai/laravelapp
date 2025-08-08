@@ -7,10 +7,21 @@ use Livewire\Component;
 class HelloComponent extends Component
 {
     public $message = '';
+    public $input = '';
 
     public function mount()
     {
         $this->message = '内部コンポーネントの利用';
+    }
+
+    public function doAction()
+    {
+        $this->triggerChildEvent($this->input);
+    }
+
+    public function triggerChildEvent($msg)
+    {
+        $this->dispatch('child-event', $msg);
     }
 
     public function render()
