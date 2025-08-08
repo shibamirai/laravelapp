@@ -1,5 +1,5 @@
 <div>
-    This is Livewire component!!
+    {{ $message }}
     <ul>
         <li>name:"{{ $name }}", pass:"{{ $pass }}"</li>
         <li>[update: {{ $check }}]</li>
