@@ -7,8 +7,9 @@ use Illuminate\Http\Response;
 
 class HelloController extends Controller
 {
-    public function index() {
-        return view('hello.index', ['message' => 'Hello!']);
+    public function index(Request $request) {
+        $id = $request->id;
+        return view('hello.index', ['id' => $id]);
     }
 
     public function post(Request $request) {

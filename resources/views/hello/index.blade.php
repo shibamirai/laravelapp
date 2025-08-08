@@ -9,7 +9,7 @@
 
 @section('content')
   <h2>コンポーネント</h2>
-  <x-package-message />
+  <x-package-message id="{{ $id }}" />
   <p>※上がコンポーネントの表示です。</p>
 @endsection
 

@@ -9,21 +9,24 @@ use Illuminate\Support\Facades\Http;
 
 class Message extends Component
 {
+    private $id;
     private $data;
+    private $msg;
 
-    public function __construct()
+    public function __construct($id = 3)
     {
-        $num = rand(1, 100);
-        $response = Http::get('https://jsonplaceholder.typicode.com/posts/' . $num);
+        $this->msg = 'ランダムなPOSTデータを表示します。';
+        $this->id = $id;
+        $response = Http::get('https://jsonplaceholder.typicode.com/posts/' . $this->id);
         $this->data = $response->json();
     }
 
     public function render(): View|Closure|string
     {
-        $data = [
-            'msg' => 'ランダムなPOSTデータを表示します。',
-            'data' => $this->data
-        ];
-        return view('components.message', $data);
+        return view('components.message', [
+            'id' => $this->id,
+            'data' => $this->data,
+            'msg' => $this->msg
+        ]);
     }
 }
