@@ -10,6 +10,7 @@ class HelloComponent extends Component
     
     public function render()
     {
-        return view('livewire.hello-component');
+        $ob = ['msg' => 'レンダリングで値を渡します。'];
+        return view('livewire.hello-component', $ob);
     }
 }
