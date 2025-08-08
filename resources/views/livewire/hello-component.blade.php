@@ -1,18 +1,7 @@
 <div>
     {{ $message }}
-    <ul>
-        <li>name:"{{ $name }}", pass:"{{ $pass }}"</li>
-        <li>[update: {{ $check }}]</li>
-    </ul>
-    <form wire:submit="updateMessage">
-        <div>
-            <input type="text" wire:model="name">
-        </div>
-        <div>
-            <input type="password" wire:model="pass">
-        </div>
-        <div>
-            <button type="submit">Click</button>
-        </div>
-    </form>
+    @livewire('notification', [
+        'title' => $alert_title,
+        'content' => $alert_content
+    ])
 </div>
