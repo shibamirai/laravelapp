@@ -8,10 +8,8 @@
 @endsection
 
 @section('content')
-  <p>ここが本文のコンテンツです。</p>
-
-  @each('hello.item', $data, 'item')
-
+  <p>Livewireコンポーネントの表示</p>
+  @livewire('hello-component')
 @endsection
 
 @section('footer')
