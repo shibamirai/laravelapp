@@ -6,30 +6,21 @@ use Livewire\Component;
 
 class HelloComponent extends Component
 {
-    public $message = '';
     public $input = '';
+    public $message = 'no message';
 
-    public function mount()
-    {
-        $this->message = '内部コンポーネントの利用';
-    }
+    protected $validate_rule = [
+        'input' => 'required|min:5|max:255',
+    ];
 
-    public function doAction()
+    public function updateMessage()
     {
-        $this->triggerChildEvent($this->input);
-    }
-
-    public function triggerChildEvent($msg)
-    {
-        $this->dispatch('child-event', $msg);
+        $this->validate($this->validate_rule);
+        $this->message = 'Updated: ' . $this->input;
     }
 
     public function render()
     {
-        $alert = [
-            'alert_title' => '重要なお知らせ',
-            'alert_content' => 'システムからの重要な通知です。'
-        ];
-        return view('livewire.hello-component', $alert);
+        return view('livewire.hello-component');
     }
 }
