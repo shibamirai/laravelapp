@@ -16,6 +16,6 @@
     <div><input type="text" name="mail"></div>
     <label for="age">age:</label>
     <div><input type="number" name="age"></div>
-    <div><input type="submit" value="send"></div>
+    <div><button type="submit">send</button></div>
   </form>
 @endsection
