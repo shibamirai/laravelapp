@@ -20,3 +20,7 @@
     <div><button type="submit">send</button></div>
   </form>
 @endsection
+
+@section('footer')
+copyright 2025 tuyano.
+@endsection
