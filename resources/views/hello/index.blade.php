@@ -1,5 +1,9 @@
 @extends('layouts.helloapp')
-
+<style>
+  nav { margin: 10px 0; }
+  nav span { margin: 5px; font-size: 12pt; }
+  nav a { margin: 5px; font-size: 12pt; }
+</style>
 @section('title', 'Index')
 
 @section('menubar')
@@ -22,6 +26,7 @@
       </tr>
     @endforeach
   </table>
+  {{ $items->links() }}
 @endsection
 
 @section('footer')
