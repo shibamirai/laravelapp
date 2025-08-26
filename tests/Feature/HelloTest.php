@@ -25,3 +25,19 @@ test('check database Person create', function () {
     $p = App\Models\Person::factory()->create();
     expect($p)->not->toBeNull();
 });
+
+test('check database Person create and find', function () {
+    $p = App\Models\Person::factory()->create();
+    $res = App\Models\Person::where('name', $p->name)->first();
+    expect($res)->not()->toBeNull();
+});
+
+test('check database Person find all', function () {
+    $arr = [
+        App\Models\Person::factory()->create(),
+        App\Models\Person::factory()->create(),
+        App\Models\Person::factory()->create(),
+    ];
+    $res = App\Models\Person::all();
+    expect($res->count())->toEqual(count($arr));
+});
