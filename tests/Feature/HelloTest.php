@@ -20,3 +20,8 @@ test('check database Person find', function () {
     $res = App\Models\User::where('name', 'alice')->first();
     expect($res)->not->toBeNull();
 });
+
+test('check database Person create', function () {
+    $p = App\Models\Person::factory()->create();
+    expect($p)->not->toBeNull();
+});
